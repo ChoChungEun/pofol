@@ -26,3 +26,13 @@ jobs:
 
       - name: Build # 리액트 빌드
         run: npm run build
+
+      - name: Deploy # S3에 배포하기
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+        run: | # 빌드 폴더 내 버킷으로 복사
+          aws s3 cp \ 
+            --recursive \
+            --region ap-northeast-2 \
+              build s3://pofol-build-s3
