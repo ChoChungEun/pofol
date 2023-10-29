@@ -4,7 +4,7 @@ on: [push]
 jobs:
   build:
     name: hello github action
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - name: checkout source code
         uses: actions/checkout@master
