@@ -1,5 +1,8 @@
-name: my workflow
-on: [push]
+name: React Build
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -9,5 +12,8 @@ jobs:
       - name: checkout source code
         uses: actions/checkout@master
 
-      - name: echo hello
-        run: echo "hello"
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
