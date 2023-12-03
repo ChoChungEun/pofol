@@ -1,11 +1,12 @@
 import { FunctionComponent } from "react";
-import { Header } from "../../components/Header";
+import { Layout } from "@components/layout";
+import { Header } from "@components/header";
 
 const MainPage: FunctionComponent = () => {
   return (
-    <>
+    <Layout>
       <Header />
-    </>
+    </Layout>
   );
 };
 
