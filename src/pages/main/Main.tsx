@@ -1,11 +1,12 @@
 import { FunctionComponent } from "react";
-import { Layout } from "../../components/layout";
-import { Header } from "../../components/header";
+// import { Header } from "components/header";
+import { Layout } from "components/layout";
 
 const MainPage: FunctionComponent = () => {
   return (
     <Layout>
-      <Header />
+      {/* <Header /> */}
+      <div className="text-[#ffffff]">build test</div>
     </Layout>
   );
 };
