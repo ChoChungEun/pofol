@@ -1,8 +1,13 @@
-import "./App.css";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import MainPage from "./pages/main/Main";
 
 function App() {
   return (
-    <div className="App">merge to master branch and ci, cd build deploy</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
