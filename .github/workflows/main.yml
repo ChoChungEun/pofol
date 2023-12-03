@@ -1,6 +1,6 @@
 name: React Build
 on:
-  push: # master branch에서 push 이벤트가 일어났을 때만 실행
+  pull_request: # master branch로 pull request 할때
     branches:
       - master
 
