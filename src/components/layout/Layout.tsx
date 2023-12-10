@@ -5,7 +5,7 @@ interface LayoutProps {
 }
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
-  return <div className="bg-black">{children}</div>;
+  return <div className="h-screen bg-[#1F2124]">{children}</div>;
 };
 
 export default Layout;
