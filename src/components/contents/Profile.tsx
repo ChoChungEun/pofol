@@ -11,6 +11,7 @@ const Profile = () => {
           <img
             src={ProfileImage}
             className="h-[100%] w-[100%] object-cover object-[50%,30%]"
+            alt="프로필 이미지"
           />
         </div>
         <p className="text-[16px] text-[#ffffff]">

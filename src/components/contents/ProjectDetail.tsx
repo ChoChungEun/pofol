@@ -1,11 +1,10 @@
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { data as projects } from "api/project-data";
 import { Header } from "components/header";
 
 const ProjectDetail: FunctionComponent = () => {
   const { projectId }: any = useParams();
-  const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -27,7 +26,7 @@ const ProjectDetail: FunctionComponent = () => {
           </p>
         </div>
         <div className="mb-[80px]">
-          <img src={`/projects/${project.imageUrl}`} />
+          <img src={`/projects/${project.imageUrl}`} alt="프로젝트 이미지" />
         </div>
         <div className="flex flex-col gap-[20px]">
           <div className="divide-solid border-b-[1px] border-[#303134] pb-[10px] text-[20px] font-[300] italic tracking-[1.5px] text-[#f0f1f4]">
