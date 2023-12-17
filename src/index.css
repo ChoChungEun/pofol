@@ -6,6 +6,24 @@
   .tab-common {
     @apply h-[24px] w-[20%] text-[14px] font-[600] uppercase text-[#A9ABB3] hover:text-[#ffffff];
   }
+  .common-description-box {
+    @apply flex h-[52px] items-center divide-solid rounded-bl-[16px] rounded-br-[16px] rounded-tl-[0px] rounded-tr-[16px] border-[1px] border-transparent bg-[#303134];
+  }
+  .common-description-text {
+    @apply pl-[12px] text-[#d7d7d7];
+  }
+  .common-detail-info-item-box {
+    @apply flex flex-col gap-[14px];
+  }
+  .common-detail-info-item {
+    @apply flex gap-[6px];
+  }
+  .common-detail-info-item-title {
+    @apply block whitespace-nowrap rounded-[3px] bg-[rgba(135,131,120,0.15)] px-[6px] py-[3px] text-[14px] text-[#dfab01];
+  }
+  .common-detail-info-item-content {
+    @apply text-[16px] text-[#f0f1f4];
+  }
   [data-active="true"] {
     @apply text-[#ffffff];
   }

@@ -1,6 +1,7 @@
 import { data as projects } from "api/project-data";
-import { Tabs, NavLink } from "@mantine/core";
+import { Tabs } from "@mantine/core";
 import { FunctionComponent, useState } from "react";
+import { Link } from "react-router-dom";
 
 interface SectionProps {
   list: any[];
@@ -12,35 +13,39 @@ const Section: FunctionComponent<SectionProps> = ({ list }) => {
   return (
     <div className="grid grid-cols-3 gap-[16px]">
       {list.map((item) => (
-        <div key={item.id} className="h-[158px]">
-          <div
-            className="h-[100%] cursor-pointer"
-            onMouseEnter={() => setHoverName(item.name)}
-            onMouseLeave={() => setHoverName("")}
-          >
-            <div className="relative h-[100%]">
-              {hoverName === item.name && (
-                <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-[12px] bg-black opacity-[0.8] ">
-                  <div className="text-[15px] font-[500] text-[#ffffff]">
-                    {item.name}
+        <Link to={{ pathname: `/project/${item.id}` }} key={item.id}>
+          <div className="h-[158px]">
+            <div
+              className="h-[100%] cursor-pointer"
+              onMouseEnter={() => setHoverName(item.name)}
+              onMouseLeave={() => setHoverName("")}
+            >
+              <div className="relative h-[100%]">
+                {hoverName === item.name && (
+                  <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-[12px] bg-black opacity-[0.8] ">
+                    <div className="text-[15px] font-[500] text-[#ffffff]">
+                      {item.name}
+                    </div>
                   </div>
+                )}
+                <div className="h-[100%]">
+                  <span
+                    className={`block h-[100%] rounded-[12px] bg-[#000000] bg-cover bg-no-repeat`}
+                    style={{
+                      backgroundImage: `url(/projects/${item.imageUrl})`,
+                      backgroundSize:
+                        item.name === "프리패스 타이머" ? "contain" : "cover",
+                      backgroundPosition:
+                        item.name === "프리패스 타이머"
+                          ? "center"
+                          : "top center",
+                    }}
+                  />
                 </div>
-              )}
-              <div className="h-[100%]">
-                <span
-                  className={`block h-[100%] rounded-[12px] bg-[#000000] bg-cover bg-no-repeat`}
-                  style={{
-                    backgroundImage: `url(/projects/${item.imageUrl})`,
-                    backgroundSize:
-                      item.name === "프리패스 타이머" ? "contain" : "cover",
-                    backgroundPosition:
-                      item.name === "프리패스 타이머" ? "center" : "top center",
-                  }}
-                />
               </div>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
@@ -62,10 +67,10 @@ const Project = () => {
       <div className="text-[24px] font-[600] tracking-[1px] text-[#9B9A97]">
         Projects ──
       </div>
-      <div className="flex h-[52px] items-center divide-solid rounded-bl-[16px] rounded-br-[16px] rounded-tl-[0px] rounded-tr-[16px]  border-[1px] border-transparent bg-[#303134] ">
-        <p className="pl-[12px] text-[#d7d7d7]">
-          <span className="mr-[10px]">💬</span> 회사에서 개발한 프로젝트들과
-          사이드 프로젝트들입니다.
+      <div className="common-description-box">
+        <p className="common-description-text">
+          <span className="mr-[10px]">💬</span> 회사, 스터디, 독학
+          프로젝트들입니다.
         </p>
       </div>
       <div>
