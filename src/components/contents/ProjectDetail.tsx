@@ -1,5 +1,5 @@
 import { FunctionComponent, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { data as projects } from "api/project-data";
 import { Header } from "components/header";
 
