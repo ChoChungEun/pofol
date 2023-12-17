@@ -1,29 +1,36 @@
 import { data as projects } from "api/project-data";
 import { Tabs, NavLink } from "@mantine/core";
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 
-const Section = () => {
+interface SectionProps {
+  list: any[];
+}
+
+const Section: FunctionComponent<SectionProps> = ({ list }) => {
   const [hoverName, setHoverName] = useState("");
+
   return (
     <div className="grid grid-cols-3 gap-[16px]">
-      {projects.map((item, idx) => (
+      {list.map((item) => (
         <div key={item.id} className="h-[158px]">
           <div
-            className="h-[100%]"
+            className="h-[100%] cursor-pointer"
             onMouseEnter={() => setHoverName(item.name)}
             onMouseLeave={() => setHoverName("")}
           >
-            <div className="h-[100%]">
+            <div className="relative h-[100%]">
               {hoverName === item.name && (
-                <div>
-                  <div>{item.name}</div>
+                <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-[12px] bg-black opacity-[0.8] ">
+                  <div className="text-[15px] font-[500] text-[#ffffff]">
+                    {item.name}
+                  </div>
                 </div>
               )}
               <div className="h-[100%]">
                 <span
                   className={`block h-[100%] rounded-[12px] bg-[#000000] bg-cover bg-no-repeat`}
                   style={{
-                    // backgroundImage: `url(/projects/pots.png)`,
+                    backgroundImage: `url(/projects/${item.imageUrl})`,
                     backgroundSize:
                       item.name === "프리패스 타이머" ? "contain" : "cover",
                     backgroundPosition:
@@ -40,8 +47,18 @@ const Section = () => {
 };
 
 const Project = () => {
+  function buildData(key: string, value: string) {
+    return projects.reduce((acc, cur) => {
+      if (cur[key] === value) {
+        return [...acc, cur];
+      } else {
+        return [...acc];
+      }
+    }, []);
+  }
+
   return (
-    <div className="flex flex-col gap-[30px]">
+    <div className="flex flex-col gap-[20px]">
       <div className="text-[24px] font-[600] tracking-[1px] text-[#9B9A97]">
         Projects ──
       </div>
@@ -53,8 +70,10 @@ const Project = () => {
       </div>
       <div>
         <Tabs defaultValue="recent">
-          <Tabs.List>
-            <Tabs.Tab value="recent" className="tab-common"></Tabs.Tab>
+          <Tabs.List className="mb-[20px]">
+            <Tabs.Tab value="recent" className="tab-common">
+              recent
+            </Tabs.Tab>
             <Tabs.Tab value="company project" className="tab-common">
               company project
             </Tabs.Tab>
@@ -69,14 +88,20 @@ const Project = () => {
             </Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel value="recent">
-            <Section />
+            <Section list={projects} />
           </Tabs.Panel>
           <Tabs.Panel value="company project">
-            company project tab content
+            <Section list={buildData("projectType", "COMPANY_PROJECT")} />
           </Tabs.Panel>
-          <Tabs.Panel value="side project">side project tab content</Tabs.Panel>
-          <Tabs.Panel value="frontend">frontend</Tabs.Panel>
-          <Tabs.Panel value="publisher">publisher</Tabs.Panel>
+          <Tabs.Panel value="side project">
+            <Section list={buildData("projectType", "SIDE_PROJECT")} />
+          </Tabs.Panel>
+          <Tabs.Panel value="frontend">
+            <Section list={buildData("position", "FRONT_END")} />
+          </Tabs.Panel>
+          <Tabs.Panel value="publisher">
+            <Section list={buildData("position", "PUBLISHER")} />
+          </Tabs.Panel>
         </Tabs>
       </div>
     </div>
