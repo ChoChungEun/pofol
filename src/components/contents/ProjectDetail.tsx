@@ -25,7 +25,7 @@ const ProjectDetail: FunctionComponent = () => {
             {project.description}
           </p>
         </div>
-        <div className="mb-[80px]">
+        <div className="mb-[80px] flex justify-center">
           <img src={`/projects/${project.imageUrl}`} alt="프로젝트 이미지" />
         </div>
         <div className="flex flex-col gap-[20px]">

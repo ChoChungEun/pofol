@@ -4,27 +4,27 @@ import { FunctionComponent, useState } from "react";
 import { Link } from "react-router-dom";
 
 interface SectionProps {
-  list: any[];
+  data: any[];
 }
 
-const Section: FunctionComponent<SectionProps> = ({ list }) => {
+const Section: FunctionComponent<SectionProps> = ({ data }) => {
   const [hoverName, setHoverName] = useState("");
 
   return (
     <div className="grid grid-cols-3 gap-[16px]">
-      {list.map((item) => (
-        <Link to={{ pathname: `/project/${item.id}` }} key={item.id}>
+      {data.map((project) => (
+        <Link to={{ pathname: `/project/${project.id}` }} key={project.id}>
           <div className="h-[158px]">
             <div
               className="h-[100%] cursor-pointer"
-              onMouseEnter={() => setHoverName(item.name)}
+              onMouseEnter={() => setHoverName(project.name)}
               onMouseLeave={() => setHoverName("")}
             >
               <div className="relative h-[100%]">
-                {hoverName === item.name && (
+                {hoverName === project.name && (
                   <div className="absolute bottom-0 left-0 right-0 top-0 flex items-center justify-center rounded-[12px] bg-black opacity-[0.8] ">
                     <div className="text-[15px] font-[500] text-[#ffffff]">
-                      {item.name}
+                      {project.name}
                     </div>
                   </div>
                 )}
@@ -32,11 +32,13 @@ const Section: FunctionComponent<SectionProps> = ({ list }) => {
                   <span
                     className={`block h-[100%] rounded-[12px] bg-[#000000] bg-cover bg-no-repeat`}
                     style={{
-                      backgroundImage: `url(/projects/${item.imageUrl})`,
+                      backgroundImage: `url(/projects/${project.imageUrl})`,
                       backgroundSize:
-                        item.name === "프리패스 타이머" ? "contain" : "cover",
+                        project.name === "프리패스 타이머"
+                          ? "contain"
+                          : "cover",
                       backgroundPosition:
-                        item.name === "프리패스 타이머"
+                        project.name === "프리패스 타이머"
                           ? "center"
                           : "top center",
                     }}
@@ -93,19 +95,19 @@ const Project = () => {
             </Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel value="recent">
-            <Section list={projects} />
+            <Section data={projects} />
           </Tabs.Panel>
           <Tabs.Panel value="company project">
-            <Section list={buildData("projectType", "COMPANY_PROJECT")} />
+            <Section data={buildData("projectType", "COMPANY_PROJECT")} />
           </Tabs.Panel>
           <Tabs.Panel value="side project">
-            <Section list={buildData("projectType", "SIDE_PROJECT")} />
+            <Section data={buildData("projectType", "SIDE_PROJECT")} />
           </Tabs.Panel>
           <Tabs.Panel value="frontend">
-            <Section list={buildData("position", "FRONT_END")} />
+            <Section data={buildData("position", "FRONT_END")} />
           </Tabs.Panel>
           <Tabs.Panel value="publisher">
-            <Section list={buildData("position", "PUBLISHER")} />
+            <Section data={buildData("position", "PUBLISHER")} />
           </Tabs.Panel>
         </Tabs>
       </div>
