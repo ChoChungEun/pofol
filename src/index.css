@@ -16,10 +16,10 @@
     @apply flex flex-col gap-[14px];
   }
   .common-detail-info-item {
-    @apply flex gap-[6px];
+    @apply flex items-center gap-[6px];
   }
   .common-detail-info-item-title {
-    @apply block whitespace-nowrap rounded-[3px] bg-[rgba(135,131,120,0.15)] px-[6px] py-[3px] text-[14px] text-[#dfab01];
+    @apply block h-fit whitespace-nowrap rounded-[3px] bg-[rgba(135,131,120,0.15)] px-[6px] py-[3px] text-[14px] text-[#dfab01];
   }
   .common-detail-info-item-content {
     @apply text-[16px] text-[#f0f1f4];
