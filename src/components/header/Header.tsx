@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { IoDocumentText } from "react-icons/io5";
 import { AiFillGithub } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
-import CoverLetter from "assets/cover_letter.pdf";
+import CoverLetter from "assets/cover_letter_240102.pdf";
 
 const GITHUB_URL = "https://github.com/agger89";
 const EMAIL = "mailto:castlehill89@gmail.com";
@@ -19,7 +19,7 @@ const Header: FunctionComponent<HeaderProps> = ({ projectName }) => {
         <div className="text-[14px] text-[#ffffff]">Portfolio</div>
       </Link>
       {projectName && (
-        <div className="text-[14px] text-[#ffffff]">
+        <div className="text-[14px] text-[#bebcbc]">
           <span className="ml-[6px] mr-[6px] text-[#d7d7d7]">/</span>
           {projectName}
         </div>
