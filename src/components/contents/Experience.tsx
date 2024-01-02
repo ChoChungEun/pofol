@@ -49,7 +49,10 @@ const Experience: FunctionComponent = () => {
                   </span>
                 </a>
               )}
-              <a href={`/experience/${experience.fileName}`} download>
+              <a
+                href={`/experience/${experience.fileName}`}
+                download={experience.downloadName}
+              >
                 <span className="flex items-center gap-[4px]">
                   <FaFileAlt size={18} color="#039be5" />
                   <span className="text-[14px] text-[#039be5]">경력기술서</span>

@@ -25,7 +25,11 @@ const Header: FunctionComponent<HeaderProps> = ({ projectName }) => {
         </div>
       )}
       <div className="ml-[auto] flex items-center gap-[14px]">
-        <a href={CoverLetter} download title="자기소개서 다운로드">
+        <a
+          href={CoverLetter}
+          download="cover_letter"
+          title="자기소개서 다운로드"
+        >
           <IoDocumentText size={22} color="#ffffff" />
         </a>
         <a

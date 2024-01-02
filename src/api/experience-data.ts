@@ -10,6 +10,7 @@ export interface ExperienData {
   workList: WorkList[];
   date: string;
   fileName: string;
+  downloadName: string;
 }
 
 export const data: ExperienData[] = [
@@ -36,6 +37,7 @@ export const data: ExperienData[] = [
     ],
     date: "2022.11 - 2023.12 | 서울시 강남구",
     fileName: "ipageon_240102.pdf",
+    downloadName: "ipageon",
   },
   {
     id: 1,
@@ -57,6 +59,7 @@ export const data: ExperienData[] = [
     ],
     date: "2022.08 - 2022.10 | 서울시 강남구",
     fileName: "jebs.pdf",
+    downloadName: "jebs",
   },
   {
     id: 2,
@@ -75,6 +78,7 @@ export const data: ExperienData[] = [
     ],
     date: "2022.05 - 2022.07 | 서울시 강남구",
     fileName: "artizen_v2.pdf",
+    downloadName: "artizen",
   },
   {
     id: 3,
@@ -96,6 +100,7 @@ export const data: ExperienData[] = [
     ],
     date: "2021.12 - 2022.04 | 서울시 강남구",
     fileName: "peachy_v3.pdf",
+    downloadName: "peachy",
   },
   {
     id: 4,
@@ -115,6 +120,7 @@ export const data: ExperienData[] = [
     ],
     date: "2019.08 - 2021.11 | 서울시 강남구",
     fileName: "specupad_v3.pdf",
+    downloadName: "specupad",
   },
   {
     id: 5,
@@ -131,6 +137,7 @@ export const data: ExperienData[] = [
     ],
     date: "2018.10 - 2019.04 | 서울시 강남구",
     fileName: "neuralbc_v2.pdf",
+    downloadName: "neuralbc",
   },
   {
     id: 6,
@@ -150,6 +157,7 @@ export const data: ExperienData[] = [
     ],
     date: "2018.04 - 2018.08 | 서울시 마포구",
     fileName: "starship.pdf",
+    downloadName: "starship",
   },
   {
     id: 7,
@@ -166,5 +174,6 @@ export const data: ExperienData[] = [
     ],
     date: "2017.02 - 2017.09 | 서울시 강남구",
     fileName: "reconers.pdf",
+    downloadName: "reconers",
   },
 ];
