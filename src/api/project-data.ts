@@ -1,4 +1,20 @@
-export const data: any[] = [
+export interface ProjectData {
+  id: number;
+  imageUrl: string;
+  description: string;
+  name: string;
+  skills: string;
+  period: string;
+  developers: string;
+  features: string;
+  githubUrl?: string;
+  projectType: string;
+  position: string;
+  createdAt: number;
+  webSiteUrl?: string;
+}
+
+export const data: ProjectData[] = [
   {
     id: 0,
     imageUrl: "pots.png",
@@ -7,8 +23,8 @@ export const data: any[] = [
     name: "EMS 통합 모니터링 홈페이지",
     skills:
       "React, React-Query, Typescript, Styled-Component, Recoil, StompJS, React-Simple-Tree-Menu",
-    period: "2022.11 ~ ",
-    developers: "1명 (client: 1명, server: 2명)",
+    period: "2022.11 ~ 2023.12",
+    developers: "4명 (client: 2명, server: 2명)",
     features:
       "트리 메뉴, 디자인 시스템, 실시간 데이터 통신, 차트, 목록 생성, 수정, 삭제",
     githubUrl: "",
@@ -23,8 +39,8 @@ export const data: any[] = [
       "서버 개발자가 2명 있고 클라이언트 페이지 프론트엔드 개발 했습니다.",
     name: "EMS 모니터링 홈페이지",
     skills: "React, React-Query, Typescript, Styled-Component, Recoil, StompJS",
-    period: "2022.11 ~ ",
-    developers: "1명 (client: 1명, server: 2명)",
+    period: "2022.11 ~ 2023.12",
+    developers: "4명 (client: 2명, server: 2명)",
     features: "디자인 시스템, 실시간 데이터 통신, 차트, 목록 생성, 수정, 삭제",
     githubUrl: "",
     projectType: "COMPANY_PROJECT",
@@ -39,7 +55,7 @@ export const data: any[] = [
     name: "영어 교육 서비스 홈페이지",
     skills: "React, Next-JS, URQL, Typescript, XStyled, Matine",
     period: "2022.08 ~ 2022.10",
-    developers: "1명 (client: 1명, server: 1명)",
+    developers: "2명 (client: 1명, server: 1명)",
     features:
       "디자인 시스템, 로그인, 회원가입, 마이페이지, 코스 구매, SHOP, 내 학습, 클래스",
     githubUrl: "",
@@ -56,7 +72,7 @@ export const data: any[] = [
     skills:
       "Next-JS, React-Query, Typescript, React-Admin, EmotionJS, React-Hook-Form, Material-UI",
     period: "2022.05 ~ 2022.07",
-    developers: "1명 (client: 1명, server: 1명)",
+    developers: "2명 (client: 1명, server: 1명)",
     features:
       "메타마스크 로그인, 메타마스크 로그아웃, 작품 목록, 작품 검색, 작품 정렬, 작품 상세, 작품 구매, 작품 민팅, 작품 철회, 작품 신고, 작가 목록, 작가 신청, 작가 상세, 내 지갑 정보, 내 공지 목록",
     githubUrl: "",
@@ -72,7 +88,7 @@ export const data: any[] = [
     name: "NFT 마켓 플레이스 관리자 페이지",
     skills: "React-Admin, EmotionJS, Material-UI",
     period: "2022.05 ~ 2022.06",
-    developers: "1명 (client: 1명, server: 1명)",
+    developers: "2명 (client: 1명, server: 1명)",
     features:
       "대시보드, 작가 신청 목록, 유저 목록, 작품 목록, 공지사항 목록, 신고 목록, 관리자 목록",
     githubUrl: "",

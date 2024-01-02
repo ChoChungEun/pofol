@@ -1,6 +1,7 @@
 import ProfileImage from "assets/profile.jpg";
+import { FunctionComponent } from "react";
 
-const Profile = () => {
+const Profile: FunctionComponent = () => {
   return (
     <div className="flex flex-col gap-[30px]">
       <div className="text-[24px] font-[600] tracking-[1px] text-[#9B9A97]">
@@ -15,8 +16,7 @@ const Profile = () => {
           />
         </div>
         <p className="text-[16px] text-[#ffffff]">
-          음악과 코딩, 운동을 좋아하며 현재 프리랜서 소속으로 프론트엔드 개발을
-          하고 있습니다.
+          음악과 코딩, 운동을 좋아하는 프리랜서 프론트엔드 개발자입니다.
         </p>
       </div>
     </div>

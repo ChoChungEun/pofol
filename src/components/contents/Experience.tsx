@@ -1,13 +1,11 @@
 import { FunctionComponent } from "react";
-import { data } from "api/experience-data";
+import { ExperienData, WorkList, data } from "api/experience-data";
 import { FaFileAlt } from "react-icons/fa";
 
 const Experience: FunctionComponent = () => {
   return (
     <div className="flex flex-col gap-[20px]">
-      <div className="text-[24px] font-[600] tracking-[1px] text-[#9B9A97]">
-        Experience ──
-      </div>
+      <div className="common-title">Experience ──</div>
       <div className="common-description-box">
         <p className="common-description-text">
           <span className="mr-[10px]">💬</span> 처음 퍼블리셔부터 현재
@@ -15,7 +13,7 @@ const Experience: FunctionComponent = () => {
         </p>
       </div>
       <div className="grid grid-cols-[1fr_1fr] gap-[16px]">
-        {data.map((experience) => (
+        {data.map((experience: ExperienData) => (
           <div
             className="relative h-[320px] rounded-[16px] border-[1px] border-[#303134]  bg-[#26282C] py-[30px] pl-[32px] pr-[12px]"
             key={experience.id}
@@ -32,9 +30,9 @@ const Experience: FunctionComponent = () => {
               {experience.position}
             </div>
             <ul className="flex flex-col gap-[8px]">
-              {experience.workLists.map((work, idx) => (
+              {experience.workList.map((work: WorkList, idx) => (
                 <li className="text-[14px] text-[#ffffff]" key={idx}>
-                  {work.list}
+                  {work.item}
                 </li>
               ))}
             </ul>

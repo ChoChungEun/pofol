@@ -1,10 +1,10 @@
-import { data as projects } from "api/project-data";
+import { ProjectData, data as projects } from "api/project-data";
 import { Tabs } from "@mantine/core";
 import { FunctionComponent, useState } from "react";
 import { Link } from "react-router-dom";
 
 interface SectionProps {
-  data: any[];
+  data: ProjectData[];
 }
 
 const Section: FunctionComponent<SectionProps> = ({ data }) => {
@@ -12,7 +12,7 @@ const Section: FunctionComponent<SectionProps> = ({ data }) => {
 
   return (
     <div className="grid grid-cols-3 gap-[16px]">
-      {data.map((project) => (
+      {data.map((project: ProjectData) => (
         <Link to={{ pathname: `/project/${project.id}` }} key={project.id}>
           <div className="h-[158px]">
             <div
@@ -53,9 +53,9 @@ const Section: FunctionComponent<SectionProps> = ({ data }) => {
   );
 };
 
-const Project = () => {
+const Project: FunctionComponent = () => {
   function buildData(key: string, value: string) {
-    return projects.reduce((acc, cur) => {
+    return projects.reduce((acc: any, cur: any) => {
       if (cur[key] === value) {
         return [...acc, cur];
       } else {

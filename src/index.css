@@ -6,6 +6,9 @@
   .tab-common {
     @apply h-[24px] w-[20%] text-[14px] font-[600] uppercase text-[#A9ABB3] hover:text-[#ffffff];
   }
+  .common-title {
+    @apply text-[24px] font-[600] tracking-[1px] text-[#9B9A97];
+  }
   .common-description-box {
     @apply flex h-[52px] items-center divide-solid rounded-bl-[16px] rounded-br-[16px] rounded-tl-[0px] rounded-tr-[16px] border-[1px] border-transparent bg-[#303134];
   }
