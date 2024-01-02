@@ -36,7 +36,7 @@ export const data: ExperienData[] = [
       },
     ],
     date: "2022.11 - 2023.12 | 서울시 강남구",
-    fileName: "ipageon_240102.pdf",
+    fileName: "ipageon_240102v2.pdf",
     downloadName: "ipageon",
   },
   {
