@@ -59,7 +59,7 @@ const Project: FunctionComponent = () => {
       if (cur[key] === value) {
         return [...acc, cur];
       } else {
-        return [...acc];
+        return acc;
       }
     }, []);
   }
