@@ -1,4 +1,4 @@
-import ProfileImage from "assets/profile.jpg";
+import ProfileImage from "assets/profile_v2.jpg";
 import { FunctionComponent } from "react";
 
 const Profile: FunctionComponent = () => {
