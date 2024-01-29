@@ -4,6 +4,15 @@ import { Header } from "components/header";
 import { Contents } from "components/contents";
 
 const MainPage: FunctionComponent = () => {
+  function outer() {
+    var a = 2;
+    function inner() {
+      console.log(a);
+    }
+    return inner;
+  }
+  var func = outer();
+  func();
   return (
     <Layout>
       <Header />
